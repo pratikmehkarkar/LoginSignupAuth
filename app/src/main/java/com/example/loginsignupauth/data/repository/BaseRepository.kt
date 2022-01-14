@@ -1,6 +1,7 @@
-package com.example.loginsignupauth.repository
+package com.example.loginsignupauth.data.repository
 
-import com.example.loginsignupauth.network.Resource
+import com.example.loginsignupauth.data.network.Resource
+import com.example.loginsignupauth.data.network.UserApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -26,4 +27,7 @@ abstract class BaseRepository {
         }
     }
 
+    suspend fun logout(api: UserApi) = safeApiCall {
+        api.logout()
+    }
 }

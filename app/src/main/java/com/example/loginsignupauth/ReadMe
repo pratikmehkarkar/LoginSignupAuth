@@ -1,0 +1,12 @@
+When to use Abstract Class?
+1. Basically it provides implementation of base class to derived class
+2. In case, if we need to use non-public members
+3. If we want to add new methods in future, then abstract class is better choice
+4. If we need to use multiple versions of the components
+5. If we want to provide common, implemented functionality among all implementations of our
+ component, use an abstract class. Abstract classes allow us to partially implement our class,
+ whereas interfaces contain no implementation for any members.
+
+General Tips:
+1) In general, "implements" used for implementing an interface but "extends :" used fo extension of
+a base class behaviour or abstract class behaviour to derived class.

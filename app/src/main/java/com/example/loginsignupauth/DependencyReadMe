@@ -1,0 +1,62 @@
+- DEPENDENCY INJECTION NOTES-
+
+1] What is Dependency Injection (DI)? - Classes often require references to other classes.
+- These required classes are called dependencies.
+For example, car might need a reference to an engine class. It means car class is depend on an
+instance of the engine class.
+
+- With the help of dependency injection, we can make code more cleaner and maintainable.
+
+- As per Dependency Injection Principle, the class should not construct it's dependencies,
+but instead of that it should get the dependencies from outside. In android we can do that by using,
+constructor parameter or Setter function.
+
+- It is design pattern in software development
+
+2] Why Dependency Injection?
+- Maintainability, Testability, Readability and Flexibility
+
+3] Types of Dependency Injection - Constructor Injection and Field Injection
+These are the examples of manual dependency injections.
+
+* Constructor Injection Code Snippet -
+class Car(private var engine: Engine){
+fun start(){
+        engine.start()
+    }
+}
+fun main(){
+val engine = Engine()
+val car = Car(engine)
+car.start()
+}
+
+* Field Injection Code Snippet -
+class Car(){
+lateinit var engine: Engine
+fun start(){
+        engine.start()
+    }
+}
+fun main(){
+val car = Car(engine)
+car.engine = Engine()
+car.start()
+}
+
+4] Automated Dependency Injection is the feasible way than the manual dependency injections.
+Automated dependency has two main types,
+a. Reflection based solution - that generates dependencies during runtime
+b. Static solutions - that generates dependencies during compile time
+
+5] Recommended DI for Android Projects - Dagger2 and Hilt
+These are static ways of DI.
+
+-- DAGGER 2 NOTES--
+
+1] What is Dagger?
+Dagger is fully static compile time DI framework for JAVA, Kotlin and Android. It means that it
+generates the required code of dependency during compile time, so that we don't need to write it
+manually.
+
+2]

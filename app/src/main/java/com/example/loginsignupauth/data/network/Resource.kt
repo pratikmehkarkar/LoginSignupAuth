@@ -1,7 +1,6 @@
-package com.example.loginsignupauth.network
+package com.example.loginsignupauth.data.network
 
 import okhttp3.ResponseBody
-import java.lang.Error
 
 //This class will handle all kind of api responses, like success or failure of api
 sealed class Resource<out T>{
@@ -13,4 +12,6 @@ sealed class Resource<out T>{
         val errorCode: Int?,
         val errorBody: ResponseBody?
     ) : Resource<Nothing>()
+
+    object Loading: Resource<Nothing>()
 }
